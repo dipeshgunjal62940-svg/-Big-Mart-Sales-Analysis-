@@ -1,0 +1,164 @@
+=== 1. DATASET INFO ===
+<class 'pandas.DataFrame'>
+RangeIndex: 5681 entries, 0 to 5680
+Data columns (total 11 columns):
+ #   Column                     Non-Null Count  Dtype
+---  ------                     --------------  -----
+ 0   Item_Identifier            5681 non-null   str
+ 1   Item_Weight                4705 non-null   float64
+ 2   Item_Fat_Content           5681 non-null   str
+ 3   Item_Visibility            5681 non-null   float64
+ 4   Item_Type                  5681 non-null   str
+ 5   Item_MRP                   5681 non-null   float64
+ 6   Outlet_Identifier          5681 non-null   str
+ 7   Outlet_Establishment_Year  5681 non-null   int64
+ 8   Outlet_Size                4075 non-null   str
+ 9   Outlet_Location_Type       5681 non-null   str
+ 10  Outlet_Type                5681 non-null   str
+dtypes: float64(3), int64(1), str(7)
+memory usage: 488.3 KB
+
+=== 2. MISSING VALUES COUNT ===
+Item_Identifier                 0
+Item_Weight                   976
+Item_Fat_Content                0
+Item_Visibility                 0
+Item_Type                       0
+Item_MRP                        0
+Outlet_Identifier               0
+Outlet_Establishment_Year       0
+Outlet_Size                  1606
+Outlet_Location_Type            0
+Outlet_Type                     0
+dtype: int64
+
+=== 3. ITEM_FAT_CONTENT DISTRIBUTION ===
+Item_Fat_Content
+Low Fat    3396
+Regular    1935
+LF          206
+reg          78
+low fat      66
+Name: count, dtype: int64
+
+=== 4. ZERO VISIBILITY COUNT ===
+Zero Visibility Items: 353
+
+=== 5. SUMMARY STATISTICS ===
+       Item_Weight  Item_Visibility     Item_MRP  Outlet_Establishment_Year
+count  4705.000000      5681.000000  5681.000000                5681.000000
+mean     12.695633         0.065684   141.023273                1997.828903
+std       4.664849         0.051252    61.809091                   8.372256
+min       4.555000         0.000000    31.990000                1985.000000
+25%       8.645000         0.027047    94.412000                1987.000000
+50%      12.500000         0.054154   141.415400                1999.000000
+75%      16.700000         0.093463   186.026600                2004.000000
+max      21.350000         0.323637   266.588400                2009.000000
+
+=== 6. DUPLICATE ROWS ===
+Duplicate rows: 0
+
+=== 7. COLUMNS ===
+['Item_Identifier', 'Item_Weight', 'Item_Fat_Content', 'Item_Visibility', 'Item_Type', 'Item_MRP', 'Outlet_Identifier', 'Outlet_Establishment_Year', 'Outlet_Size', 'Outlet_Location_Type', 'Outlet_Type']
+PS C:\Users\dipes\OneDrive\Desktop\Sysslan_Analytics> & C:\Users\dipes\AppData\Local\Microsoft\WindowsApps\python3.13.exe c:/Users/dipes/OneDrive/Desktop/Sysslan_Analytics/Level2_Data_Cleaning.py
+--- Data Cleaning Shuru Ho Rahi Hai ---
+
+1. Fixed Item_Fat_Content Distribution:
+Item_Fat_Content
+Low Fat       2581
+Regular       2013
+Non-Edible    1087
+Name: count, dtype: int64
+
+2. Missing Values After Cleaning (Should be 0 across all 11 columns):
+Item_Identifier              0
+Item_Weight                  0
+Item_Fat_Content             0
+Item_Visibility              0
+Item_Type                    0
+Item_MRP                     0
+Outlet_Identifier            0
+Outlet_Establishment_Year    0
+Outlet_Size                  0
+Outlet_Location_Type         0
+Outlet_Type                  0
+dtype: int64
+
+--- SUCCESS: Cleaned data with all 11 columns saved as 'Big_Mart_Sales_Cleaned.csv' ---
+PS C:\Users\dipes\OneDrive\Desktop\Sysslan_Analytics> & C:\Users\dipes\AppData\Local\Microsoft\WindowsApps\python3.13.exe c:/Users/dipes/OneDrive/Desktop/Sysslan_Analytics/Level3_Sales_Analysis.py
+--- Level 3: Exploratory Data Analysis Start ---
+Total Sales Value: 801153
+Average MRP: 141.02
+
+=== 1. TOP ITEM TYPES BY TOTAL MRP VALUE ===
+                Item_Type  Product_Count     Avg_MRP  Total_MRP_Value
+13            Snack Foods            789  146.863923      115875.6350
+6   Fruits and Vegetables            781  143.867282      112360.3474
+9               Household            638  147.754824       94267.5778
+5            Frozen Foods            570  133.409842       76043.6098
+4                   Dairy            454  145.325889       65977.9536
+3                  Canned            435  136.915788       59558.3676
+0            Baking Goods            438  129.052304       56524.9092
+8      Health and Hygiene            338  136.629860       46180.8928
+10                   Meat            311  140.850213       43804.4162
+14            Soft Drinks            281  141.597651       39788.9400
+
+=== 2. OUTLET TYPE PERFORMANCE ===
+         Outlet_Type  Product_Count     Avg_MRP  Total_MRP_Value
+0      Grocery Store            722  141.960824      102495.7148
+1  Supermarket Type1           3717  140.711409      523024.3090
+2  Supermarket Type2            618  139.983201       86509.6182
+3  Supermarket Type3            624  142.826241       89123.5742
+
+=== 3. OUTLET LOCATION TIER PERFORMANCE ===
+  Location_Tier  Product_Count     Avg_MRP  Total_MRP_Value
+0        Tier 1           1592  141.043542      224541.3184
+1        Tier 2           1856  140.718790      261174.0746
+2        Tier 3           2233  141.261900      315437.8232
+
+=== 4. FAT CONTENT DISTRIBUTION & PRICING ===
+  Fat_Content  Product_Count     Avg_MRP  Total_MRP_Value
+0     Low Fat           2581  141.441298      365059.9910
+1  Non-Edible           1087  143.003857      155445.1922
+2     Regular           2013  139.417801      280648.0330
+
+=== 5. OUTLET AGE VS PRODUCT COUNT ===
+  Outlet_ID        Outlet_Type  Outlet_Age_Years  Product_Count     Avg_MRP
+0    OUT010      Grocery Store                28            370  141.732965
+1    OUT013  Supermarket Type1                39            621  140.681858
+2    OUT017  Supermarket Type1                19            617  143.366926
+3    OUT018  Supermarket Type2                17            618  139.983201
+4    OUT019      Grocery Store                41            352  142.200334
+5    OUT027  Supermarket Type3                41            624  142.826241
+6    OUT035  Supermarket Type1                22            620  138.084348
+7    OUT045  Supermarket Type1                24            619  140.717908
+8    OUT046  Supermarket Type1                29            620  138.968874
+9    OUT049  Supermarket Type1                27            620  142.461450
+
+=== TOP 10 PRODUCTS BY SALES VALUE ===
+Item_Identifier
+FDP15    2055.5640
+DRM11    1825.1946
+NCQ29    1823.9946
+FDG28    1714.2008
+DRE01    1693.6584
+FDU43    1668.2948
+FDY58    1600.8858
+FDY14    1587.3356
+NCL06    1566.6564
+FDK46    1557.6720
+Name: Item_MRP, dtype: float64
+
+=== SALES BY OUTLET ===
+Outlet_Identifier
+OUT027    89123.5742
+OUT017    88457.3936
+OUT049    88326.0990
+OUT013    87363.4336
+OUT045    87104.3850
+OUT018    86509.6182
+OUT046    86160.7018
+OUT035    85612.2960
+OUT010    52441.1972
+OUT019    50054.5176
+Name: Item_MRP, dtype: float64

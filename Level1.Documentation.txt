@@ -1,0 +1,44 @@
+==================================================
+SYSSLAN ANALYTICS - LEVEL 1: DATA UNDERSTANDING REPORT
+==================================================
+
+1. DATASET OVERVIEW:
+   - Total Rows: 5,681
+   - Total Columns: 11
+   - Memory Usage: ~488.3 KB
+
+2. MISSING VALUES SUMMARY:
+   - Outlet_Size: 1,606 missing values (~28.27%)
+   - Item_Weight: 976 missing values (~17.18%)
+   - All other 9 columns: 0 missing values
+
+3. DATA QUALITY & INCONSISTENCIES FOUND:
+   a) Item_Fat_Content Redundant Categories:
+      - Low Fat variants: 'Low Fat' (3396), 'LF' (206), 'low fat' (66) -> Total: 3,668
+      - Regular variants: 'Regular' (1935), 'reg' (78) -> Total: 2,013
+   b) Invalid Item_Visibility:
+      - 353 items have 0.0 visibility (Invalid because displayed items cannot have zero visibility).
+
+4. NUMERICAL INSIGHTS:
+   - Item_MRP ranges from 31.99 to 266.59 (Mean: 141.02).
+   - Item_Weight ranges from 4.55 to 21.35 kg (Mean: 12.70 kg).
+   - Outlet Establishment Years range from 1985 to 2009.
+
+5. BUSINESS ASSUMPTIONS:
+   - Target sales column ('Item_Outlet_Sales') is absent in this dataset.
+   - 'Item_MRP' will be used for product and outlet sales/pricing analysis in upcoming levels.
+
+6. Duplicate rows: 0.
+
+7. COLUMNS:
+['Item_Identifier'
+, 'Item_Weight', 
+'Item_Fat_Content', 
+'Item_Visibility', 
+'Item_Type', 
+'Item_MRP', 
+'Outlet_Identifier', 
+'Outlet_Establishment_Year', 
+'Outlet_Size', 
+'Outlet_Location_Type', 
+'Outlet_Type']

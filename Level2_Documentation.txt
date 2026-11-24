@@ -1,0 +1,35 @@
+==================================================
+SYSSLAN ANALYTICS - LEVEL 2: DATA CLEANING REPORT
+==================================================
+
+1. CATEGORY STANDARDIZATION:
+   - 'Item_Fat_Content' duplicate labels unified:
+     * 'LF' & 'low fat' mapped to 'Low Fat'
+     * 'reg' mapped to 'Regular'
+   - 'NC' items classified as 'Non-Edible' because they represent
+     household/cleaning products.
+   - Final categories: Low Fat, Regular, and Non-Edible.
+
+2. MISSING VALUE IMPUTATION:
+   - Item_Weight (976 missing): Imputed using mean weight grouped by 'Item_Identifier'.
+   - Outlet_Size (1,606 missing): Imputed using mode (most common size) grouped by 'Outlet_Type'.
+   - Remaining missing values across all columns: 0.
+
+3. INVALID DATA HANDLING:
+   - Item_Visibility: Replaced 353 zero-visibility entries with mean visibility grouped by 'Item_Identifier'.
+   - Minimum visibility after cleaning: 0.003591414.
+
+
+4. DATA TYPE & COLUMN CLEANUP:
+   - Categorical columns converted to category data type:
+     * Item_Fat_Content
+     * Item_Type
+     * Outlet_Identifier
+     * Outlet_Size
+     * Outlet_Location_Type
+     * Outlet_Type
+   - 'Item_Visibility' removed because it is not used in the Power BI dashboard.
+
+5. OUTPUT GENERATED:
+   - Exported clean dataset: 'Big_Mart_Sales_Cleaned.csv'
+ 

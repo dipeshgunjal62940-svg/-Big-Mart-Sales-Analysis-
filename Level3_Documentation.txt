@@ -1,0 +1,27 @@
+==================================================
+SYSSLAN ANALYTICS - LEVEL 3: SALES & EDA REPORT
+==================================================
+
+1. CATEGORY ANALYSIS (ITEM TYPE):
+   - Highest Revenue/MRP Contribution: Snack Foods, Fruits & Vegetables, Household.
+   - Lowest Revenue Contribution:"Seafood, Breakfast, Others".
+
+2. OUTLET TYPE PERFORMANCE:
+   - Supermarket Type 1 dominates in total product volume and total value.
+   -  Grocery Stores have higher total sales than Supermarket Type 2 and Supermarket Type 3. However, their sales per outlet are significantly lower than those of supermarkets, at approximately 51K compared with 87K–89K per outlet.
+
+
+3. LOCATION TIER INSIGHTS:
+   - Tier 3 locations have the highest number of overall product listings and total value, followed by Tier 2 and Tier 1.
+
+4. FAT CONTENT COMPARISON:
+   - Low Fat 45.4% (2,581), Regular 35.4% (2,013), Non-Edible 19.1% (1,087). Average MRP: Low Fat ~141.4, Regular ~139.4, Non-Edible ~143.0
+   - Average price (MRP) between Low Fat and Regular items remains almost equal (~141 INR).
+
+5. STORE AGE (ESTABLISHMENT YEAR):
+   - Outlets established in 1985 ( 41 years old) have significant presence alongside newer supermarkets built in 2004–2009.
+   
+6. OVERALL PERFORMANCE & TOP PRODUCTS:
+   - Total sales value (sum of MRP): 801,153
+   - Top 3 products: FDP15, DRM11, NCQ29
+   - Full lists saved in Level3_Top10_Products.csv and Level3_Outlet_Sales.csv
